@@ -13,7 +13,6 @@
 from __future__ import absolute_import, division, print_function
 
 # Import standard modules
-from types import NoneType
 import collections
 try:
     HAS_NP = True
@@ -201,7 +200,7 @@ def is_none(value):
     :return: 
     """
 
-    return isinstance(value, NoneType)
+    return value is None
 
 # -----------------------------------------------------------------
 

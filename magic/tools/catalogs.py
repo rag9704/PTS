@@ -453,6 +453,9 @@ def create_star_catalog(coordinate_box, pixelscale, catalogs, check_in_box=False
 
         # Query Vizier and obtain the resulting table
         result = viz.query_region(center.to_astropy(), width=ra_span, height=dec_span, catalog=code)
+        if len(result) == 0:
+            continue
+
         table = result[0]
 
         number_of_stars = 0

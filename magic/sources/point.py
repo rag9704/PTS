@@ -519,7 +519,10 @@ class PointSourceFinder(Configurable):
                 log.error("Continuing with next source ...")
 
         # Inform the user
-        log.debug("Found a source for {0} out of {1} objects ({2:.2f}%)".format(self.have_detection, len(self.sources), self.have_detection / len(self.sources) * 100.0))
+        if len(self.sources) > 0:
+            log.debug("Found a source for {0} out of {1} objects ({2:.2f}%)".format(self.have_detection, len(self.sources), self.have_detection / len(self.sources) * 100.0))
+        else:
+            log.debug("No sources to be detected")
 
     # -----------------------------------------------------------------
 
